@@ -6,4 +6,5 @@ public interface Queue {
 	
 	public void add(int val);
 	
+	public void resize(int len);
 }

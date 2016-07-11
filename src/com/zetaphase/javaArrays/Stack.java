@@ -6,4 +6,6 @@ public interface Stack {
 	
 	public void push(int val);
 	
+	public void resize(int len);
+	
 }
