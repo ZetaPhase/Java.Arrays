@@ -1,5 +1,7 @@
 package com.zetaphase.javaArrays;
 
+import java.util.Arrays;
+
 public class QueueArray implements Queue {
 
 	private int[] array = new int[10];
@@ -35,11 +37,6 @@ public class QueueArray implements Queue {
 		length += 1;
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 	@Override
 	//helper method
 	public void shift() {
@@ -49,6 +46,16 @@ public class QueueArray implements Queue {
 			temp[i-1] = array[i];
 		}
 		array = temp;
+	}
+	
+	@Override
+	public String toString() {
+		return Arrays.toString(array);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

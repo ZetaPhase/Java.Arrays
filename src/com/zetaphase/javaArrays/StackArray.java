@@ -1,5 +1,7 @@
 package com.zetaphase.javaArrays;
 
+import java.util.Arrays;
+
 public class StackArray implements Stack {
 
 	private int[] array = new int[10];
@@ -10,7 +12,7 @@ public class StackArray implements Stack {
 	//helper method
 	public void resize(int len) {
 		int[] temp = new int[len];
-		for (int i=0; i < array.length; i++){
+		for (int i=0; i < length; i++){
 			temp[i] = array[i];
 		}
 		
@@ -22,8 +24,8 @@ public class StackArray implements Stack {
 		if (length < array.length / 2.0){
 			this.resize((array.length / 2)+1);
 		}
-		int result = array[length];
-		array[length] = 0;
+		int result = array[length-1];
+		array[length-1] = 0;
 		length -= 1;
 		return result;
 	}
@@ -37,9 +39,27 @@ public class StackArray implements Stack {
 		length += 1;
 	}
 
+	public int getLength() {
+		return length;
+	}
+	
+	public int getArrayLength() {
+		return array.length;
+	}
+	
+	@Override
+	public String toString() {
+		return Arrays.toString(array);
+	}
+	
 	public static void main(String[] args) {
-		//StackArray a = new StackArray();
-		//System.out.println(a.get(0).equals(null));
+		StackArray a = new StackArray();
+		a.push(5);
+		a.push(4);
+		a.push(3);
+		a.push(2);
+		a.push(1);
+		a.push(-10);
 	}
 
 }
