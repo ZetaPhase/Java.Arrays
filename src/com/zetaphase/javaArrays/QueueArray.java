@@ -10,7 +10,7 @@ public class QueueArray implements Queue {
 	@Override
 	public void resize(int len) {
 		int[] temp = new int[len];
-		for (int i=0; i < array.length; i++){
+		for (int i=0; i < length; i++){
 			temp[i] = array[i];
 		}
 		
@@ -54,8 +54,17 @@ public class QueueArray implements Queue {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		QueueArray a = new QueueArray();
+		a.add(1);
+		a.add(2);
+		a.add(3);
+		a.add(4);
+		a.add(5);
+		System.out.println(a.take());
+		System.out.println(a.take());
+		System.out.println(a.take());
+		System.out.println(a.take());
+		System.out.println(a);
 	}
 
 }
