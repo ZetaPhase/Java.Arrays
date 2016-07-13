@@ -8,5 +8,6 @@ public interface Queue {
 	
 	public void resize(int len);
 	
+	//helper
 	public void shift();
 }
